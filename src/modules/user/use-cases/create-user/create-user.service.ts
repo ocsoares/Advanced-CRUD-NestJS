@@ -1,9 +1,11 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { IService } from 'src/interfaces/IService';
 import { IUser } from 'src/models/IUser';
 import { UserRepository } from '../../../../repositories/abstracts/UserRepository';
 import * as bcrypt from 'bcrypt';
 import { IReturnUser } from 'src/interfaces/IReturnUser';
+import { UserAlreadyExistsByName } from 'src/exceptions/user-exceptions/user-already-exists-by-name.exception';
+import { UserAlreadyExistsByEmail } from 'src/exceptions/user-exceptions/user-already-exists-by-email.exception';
 
 @Injectable()
 export class CreateUserService implements IService {
@@ -15,9 +17,7 @@ export class CreateUserService implements IService {
         );
 
         if (userAlreadyExists) {
-            throw new BadRequestException(
-                'Já existe um usuário cadastrado com esse nome !',
-            );
+            throw new UserAlreadyExistsByName();
         }
 
         const emailAlreadyExists = await this._createUserRepository.findByEmail(
@@ -25,9 +25,7 @@ export class CreateUserService implements IService {
         );
 
         if (emailAlreadyExists) {
-            throw new BadRequestException(
-                'Já existe um usuário cadastrado com esse email !',
-            );
+            throw new UserAlreadyExistsByEmail();
         }
 
         const createUser = await this._createUserRepository.create({
