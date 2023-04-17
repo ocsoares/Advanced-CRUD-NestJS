@@ -4,8 +4,8 @@ import { IUser } from 'src/models/IUser';
 import { UserRepository } from '../../../../repositories/abstracts/UserRepository';
 import * as bcrypt from 'bcrypt';
 import { IReturnUser } from 'src/interfaces/IReturnUser';
-import { UserAlreadyExistsByNameException } from 'src/exceptions/user-exceptions/user-already-exists-by-name.exception';
-import { UserAlreadyExistsByEmailException } from 'src/exceptions/user-exceptions/user-already-exists-by-email.exception';
+import { UserAlreadyExistsByNameException } from 'src/exceptions/user-exceptions/already-exists/user-already-exists-by-name.exception';
+import { UserAlreadyExistsByEmailException } from 'src/exceptions/user-exceptions/already-exists/user-already-exists-by-email.exception';
 
 @Injectable()
 export class CreateUserService implements IService {
