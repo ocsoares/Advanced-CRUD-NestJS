@@ -13,7 +13,6 @@ export class CreateUserController implements IController {
     async handle(@Body() body: CreateUserDTO): Promise<returnHandle> {
         const createUser = await this._createUserService.execute(body);
 
-        // Retorna AUTOMATICAMENTE em Json !!
         return {
             message: 'Usuário criado com sucesso !',
             data: createUser,

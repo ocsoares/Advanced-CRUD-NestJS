@@ -1,8 +1,5 @@
 import { IsEmail, IsNotEmpty, IsString, Length } from 'class-validator';
 
-// Para usar esses Decorators de VALIDAR Dados, PRECISA ser CLASSE, Interface NÃO DÁ CERTO !!
-// OBS: Esses Decorators podem ter várias customizações, como por exemplo, mudar a Mensagem de Erro !!
-
 export class CreateUserDTO {
     @IsNotEmpty({ message: 'O campo name não pode ser vazio !' })
     @IsString()

@@ -126,8 +126,6 @@ describe('LoginUserController', () => {
         expect(bcryptCompare).toHaveBeenCalledTimes(0);
     });
 
-    // NÃO mockei NADA aqui nesse teste porque se eu Mockar o Email, logo ele existe, então ele PASSA do Erro, como eu NÃO
-    // quero isso, não mockei o Email, logo, a Senha nem vai chegar a ser Validade (comparada no Bcrypt) !!!
     it('should NOT generate a JWT for a invalid user', async () => {
         const response = await supertest(app.getHttpServer())
             .post(route)

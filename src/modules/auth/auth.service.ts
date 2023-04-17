@@ -4,7 +4,7 @@ import * as bcrypt from 'bcrypt';
 import { IReturnUser } from 'src/interfaces/IReturnUser';
 
 interface IAuthService {
-    validateUser(email: string, password: string): Promise<IReturnUser>; // VER o Retorno disso...
+    validateUser(email: string, password: string): Promise<IReturnUser>;
 }
 
 @Injectable()
