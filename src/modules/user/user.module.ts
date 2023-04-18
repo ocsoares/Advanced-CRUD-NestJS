@@ -8,6 +8,8 @@ import { MeUserController } from './use-cases/me-user/me-user.controller';
 import { MeUserService } from './use-cases/me-user/me-user.service';
 import { ConsultUserController } from './use-cases/consult-user/consult-user.controller';
 import { ConsultUserService } from './use-cases/consult-user/consult-user.service';
+import { ConsultAllUsersController } from './use-cases/consult-all-users/consult-all-users.controller';
+import { ConsultAllUsersService } from './use-cases/consult-all-users/consult-all-users.service';
 
 @Module({
     imports: [
@@ -18,7 +20,7 @@ import { ConsultUserService } from './use-cases/consult-user/consult-user.servic
             }),
         }),
     ],
-    controllers: [CreateUserController, LoginUserController, MeUserController, ConsultUserController],
-    providers: [CreateUserService, LoginUserService, MeUserService, ConsultUserService],
+    controllers: [CreateUserController, LoginUserController, MeUserController, ConsultUserController, ConsultAllUsersController],
+    providers: [CreateUserService, LoginUserService, MeUserService, ConsultUserService, ConsultAllUsersService],
 })
 export class UserModule {}
