@@ -23,7 +23,7 @@ export class MeUserService implements IService {
         const user = await this._meUserRepository.findById(token_user_id);
 
         if (!user) {
-            throw new InvalidUserByIdException();
+            throw new InvalidUserByIdException(401);
         }
 
         const returnUser: IReturnUser = {

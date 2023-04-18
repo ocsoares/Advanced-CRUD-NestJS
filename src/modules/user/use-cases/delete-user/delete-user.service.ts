@@ -12,7 +12,7 @@ export class DeleteUserService implements IService {
         const user = await this._deleteUserRepository.findById(user_id);
 
         if (!user) {
-            throw new InvalidUserByIdException();
+            throw new InvalidUserByIdException(400);
         }
 
         const returnUser: IReturnUser = {
