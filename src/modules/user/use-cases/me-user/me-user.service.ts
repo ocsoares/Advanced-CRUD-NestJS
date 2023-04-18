@@ -1,5 +1,6 @@
 import { InjectRedis, Redis } from '@nestjs-modules/ioredis';
 import { Injectable } from '@nestjs/common';
+import { REDIS_EXPIRATION } from 'src/config/redis';
 import { InvalidUserByIdException } from 'src/exceptions/user-exceptions/invalid/invalid-user-by-id.exception';
 import { IReturnUser } from 'src/interfaces/IReturnUser';
 import { IService } from 'src/interfaces/IService';
@@ -34,7 +35,7 @@ export class MeUserService implements IService {
             `user:${token_user_id}`,
             JSON.stringify(returnUser),
             'EX',
-            process.env.REDIS_EXPIRATION,
+            REDIS_EXPIRATION,
         );
 
         return returnUser;
