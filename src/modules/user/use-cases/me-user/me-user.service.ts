@@ -30,13 +30,11 @@ export class MeUserService implements IService {
             email: user.email,
         };
 
-        const redisExpiration = 3600;
-
         await this._redis.set(
             `user:${token_user_id}`,
             JSON.stringify(returnUser),
             'EX',
-            redisExpiration,
+            process.env.REDIS_EXPIRATION,
         );
 
         return returnUser;
