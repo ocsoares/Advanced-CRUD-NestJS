@@ -1,0 +1,44 @@
+import { InjectRedis, Redis } from '@nestjs-modules/ioredis';
+import { Injectable } from '@nestjs/common';
+import { InvalidUserByIdException } from 'src/exceptions/user-exceptions/invalid/invalid-user-by-id.exception';
+import { IReturnUser } from 'src/interfaces/IReturnUser';
+import { IService } from 'src/interfaces/IService';
+import { UserRepository } from 'src/repositories/abstracts/UserRepository';
+
+@Injectable()
+export class MeUserService implements IService {
+    constructor(
+        private readonly _meUserRepository: UserRepository,
+        @InjectRedis() private readonly _redis: Redis,
+    ) {}
+
+    async execute(token_user_id: string): Promise<IReturnUser> {
+        const cachedUser = await this._redis.get(`user:${token_user_id}`);
+
+        if (cachedUser) {
+            return JSON.parse(cachedUser);
+        }
+
+        const user = await this._meUserRepository.findById(token_user_id);
+
+        if (!user) {
+            throw new InvalidUserByIdException();
+        }
+
+        const returnUser: IReturnUser = {
+            name: user.name,
+            email: user.email,
+        };
+
+        const redisExpiration = 3600;
+
+        await this._redis.set(
+            `user:${token_user_id}`,
+            JSON.stringify(returnUser),
+            'EX',
+            redisExpiration,
+        );
+
+        return returnUser;
+    }
+}
