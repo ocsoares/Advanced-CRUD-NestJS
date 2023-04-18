@@ -4,5 +4,5 @@ export interface returnHandle {
 }
 
 export interface IController {
-    handle(...args: object[]): Promise<returnHandle>;
+    handle(...args: object[] | string[]): Promise<returnHandle>;
 }

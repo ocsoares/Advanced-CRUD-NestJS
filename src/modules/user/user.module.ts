@@ -6,6 +6,8 @@ import { LoginUserService } from './use-cases/login-user/login-user.service';
 import { JwtModule } from '@nestjs/jwt';
 import { MeUserController } from './use-cases/me-user/me-user.controller';
 import { MeUserService } from './use-cases/me-user/me-user.service';
+import { ConsultUserController } from './use-cases/consult-user/consult-user.controller';
+import { ConsultUserService } from './use-cases/consult-user/consult-user.service';
 
 @Module({
     imports: [
@@ -16,7 +18,7 @@ import { MeUserService } from './use-cases/me-user/me-user.service';
             }),
         }),
     ],
-    controllers: [CreateUserController, LoginUserController, MeUserController],
-    providers: [CreateUserService, LoginUserService, MeUserService],
+    controllers: [CreateUserController, LoginUserController, MeUserController, ConsultUserController],
+    providers: [CreateUserService, LoginUserService, MeUserService, ConsultUserService],
 })
 export class UserModule {}
