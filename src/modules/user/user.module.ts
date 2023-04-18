@@ -10,6 +10,8 @@ import { ConsultUserController } from './use-cases/consult-user/consult-user.con
 import { ConsultUserService } from './use-cases/consult-user/consult-user.service';
 import { ConsultAllUsersController } from './use-cases/consult-all-users/consult-all-users.controller';
 import { ConsultAllUsersService } from './use-cases/consult-all-users/consult-all-users.service';
+import { DeleteUserService } from './use-cases/delete-user/delete-user.service';
+import { DeleteUserController } from './use-cases/delete-user/delete-user.controller';
 
 @Module({
     imports: [
@@ -20,7 +22,7 @@ import { ConsultAllUsersService } from './use-cases/consult-all-users/consult-al
             }),
         }),
     ],
-    controllers: [CreateUserController, LoginUserController, MeUserController, ConsultUserController, ConsultAllUsersController],
-    providers: [CreateUserService, LoginUserService, MeUserService, ConsultUserService, ConsultAllUsersService],
+    controllers: [CreateUserController, LoginUserController, MeUserController, ConsultUserController, ConsultAllUsersController, DeleteUserController],
+    providers: [CreateUserService, LoginUserService, MeUserService, ConsultUserService, ConsultAllUsersService, DeleteUserService],
 })
 export class UserModule {}
