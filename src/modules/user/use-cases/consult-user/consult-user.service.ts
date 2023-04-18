@@ -14,7 +14,6 @@ export class ConsultUserService implements IService {
     ) {}
 
     async execute(user_id: string): Promise<IReturnUser> {
-        console.log('TESTE ENV:', REDIS_EXPIRATION);
         const cachedUser = await this._redis.get(`user:${user_id}`);
 
         if (cachedUser) {
