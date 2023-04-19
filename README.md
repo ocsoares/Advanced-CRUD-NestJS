@@ -10,15 +10,15 @@
 
 # Estrutura do projeto
 
-![Estrutura](https://raw.githubusercontent.com/ocsoares/images/master/advanced-crud-nestjs/IMAGE--.jpg)
+![Estrutura](https://raw.githubusercontent.com/ocsoares/images/master/advanced-crud-nestjs/structure.jpg)
 
 Esse projeto é um **CRUD** avançado feito com NestJS, onde foi implementado autenticação e cache com a ferramenta **Redis**.
 
 ## Módulos e use-cases
 
-![Módulos](https://raw.githubusercontent.com/ocsoares/images/master/advanced-crud-nestjs/IMAGE--.jpg)
+![Módulos](https://raw.githubusercontent.com/ocsoares/images/master/advanced-crud-nestjs/modules.jpg)
 
-![Email use-cases](https://raw.githubusercontent.com/ocsoares/images/master/advanced-crud-nestjs/IMAGE--.jpg)
+![User use-cases](https://raw.githubusercontent.com/ocsoares/images/master/advanced-crud-nestjs/use-cases.jpg)
 
 # Principais tecnologias e bibliotecas utilizadas
 
