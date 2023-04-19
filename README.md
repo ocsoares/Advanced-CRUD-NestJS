@@ -12,7 +12,7 @@
 
 ![Estrutura](https://raw.githubusercontent.com/ocsoares/images/master/advanced-crud-nestjs/structure.jpg)
 
-Esse projeto é um **CRUD** avançado feito com NestJS, onde foi implementado autenticação e cache com a ferramenta **Redis**.
+Esse projeto é um **CRUD** avançado feito com NestJS, onde foi implementado autenticação e cache com a ferramenta **Redis**. Não foi implementado testes, por opção própria.
 
 ## Módulos e use-cases
 
