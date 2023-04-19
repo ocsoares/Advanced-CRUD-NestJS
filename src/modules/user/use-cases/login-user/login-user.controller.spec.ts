@@ -65,7 +65,7 @@ describe('LoginUserController', () => {
                 LoginUserService,
                 {
                     provide: JwtService,
-                    useClass: JwtServiceMock, 
+                    useClass: JwtServiceMock,
                 },
                 {
                     provide: UserRepository,

@@ -11,6 +11,8 @@ import { Global, Module } from '@nestjs/common';
             useClass: null /* FAKE REPO */,
         },
     ],
-    exports: [/* EXPORT PROVIDE REPO */],
+    exports: [
+        /* EXPORT PROVIDE REPO */
+    ],
 })
 export class TestDependenciesModule {}

@@ -24,7 +24,23 @@ import { UpdateUserService } from './use-cases/update-user/update-user.service';
             }),
         }),
     ],
-    controllers: [CreateUserController, LoginUserController, MeUserController, ConsultUserController, ConsultAllUsersController, DeleteUserController, UpdateUserController],
-    providers: [CreateUserService, LoginUserService, MeUserService, ConsultUserService, ConsultAllUsersService, DeleteUserService, UpdateUserService],
+    controllers: [
+        CreateUserController,
+        LoginUserController,
+        MeUserController,
+        ConsultUserController,
+        ConsultAllUsersController,
+        DeleteUserController,
+        UpdateUserController,
+    ],
+    providers: [
+        CreateUserService,
+        LoginUserService,
+        MeUserService,
+        ConsultUserService,
+        ConsultAllUsersService,
+        DeleteUserService,
+        UpdateUserService,
+    ],
 })
 export class UserModule {}
