@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { IUser } from 'src/models/IUser';
 import { UserRepository } from 'src/repositories/abstracts/UserRepository';
 import { PrismaService } from '../prisma-client.service';
+import { UpdateUserDTO } from 'src/modules/user/use-cases/update-user/dtos/UpdateUserDTO';
 
 @Injectable()
 export class PrismaUserRepository implements UserRepository {
@@ -46,6 +47,13 @@ export class PrismaUserRepository implements UserRepository {
     async deleteOneById(id: string): Promise<void> {
         await this._prismaService.user.delete({
             where: { id },
+        });
+    }
+
+    async updateOneById(id: string, data: UpdateUserDTO): Promise<void> {
+        await this._prismaService.user.update({
+            where: { id },
+            data,
         });
     }
 }

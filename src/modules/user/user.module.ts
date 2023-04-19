@@ -12,6 +12,8 @@ import { ConsultAllUsersController } from './use-cases/consult-all-users/consult
 import { ConsultAllUsersService } from './use-cases/consult-all-users/consult-all-users.service';
 import { DeleteUserService } from './use-cases/delete-user/delete-user.service';
 import { DeleteUserController } from './use-cases/delete-user/delete-user.controller';
+import { UpdateUserController } from './use-cases/update-user/update-user.controller';
+import { UpdateUserService } from './use-cases/update-user/update-user.service';
 
 @Module({
     imports: [
@@ -22,7 +24,7 @@ import { DeleteUserController } from './use-cases/delete-user/delete-user.contro
             }),
         }),
     ],
-    controllers: [CreateUserController, LoginUserController, MeUserController, ConsultUserController, ConsultAllUsersController, DeleteUserController],
-    providers: [CreateUserService, LoginUserService, MeUserService, ConsultUserService, ConsultAllUsersService, DeleteUserService],
+    controllers: [CreateUserController, LoginUserController, MeUserController, ConsultUserController, ConsultAllUsersController, DeleteUserController, UpdateUserController],
+    providers: [CreateUserService, LoginUserService, MeUserService, ConsultUserService, ConsultAllUsersService, DeleteUserService, UpdateUserService],
 })
 export class UserModule {}
